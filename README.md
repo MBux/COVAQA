@@ -14,7 +14,7 @@ This portion of the application serves as the group project for CS-410/510 Adven
 - Jonathan Bral
 - Mike Buxton
 - Anthony Bobrovnikov
-- Cosimo 
+- Cosimo Connelli
 
 ## License
 - [MIT](LICENSE.md)
