@@ -19,13 +19,13 @@ def readInFile(data):
     # TODO When possible apply it to use an API
     # TODO change your own directory
     df = st.cache(pd.read_csv)(
-        "/Users/cosimo/Downloads/Cases of Variants of Concern in the United States.csv")
+        "../datasets/Cases of Variants of Concern in the United States.csv")
     return df
 
 
 def displayTotalCases(df):
     # display the entire CSV file
-    is_check = st.checkbox("Display total cases of Variance of Concerne")
+    is_check = st.checkbox("Display total cases of Variance of Concern")
     if is_check:
         st.write(df)
 
