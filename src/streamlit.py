@@ -66,8 +66,7 @@ def displayData(df):
 
 
 def main():
-    # TODO add your own path
-    dataset = "/Users/cosimo/Downloads/Cases of Variants of Concern in the United States.csv"
+    dataset = "datasets/Cases of Variants of Concern in the United States.csv"
 
     # Titles for main page and sidebars
     st.title("COVaqa")

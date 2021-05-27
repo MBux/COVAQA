@@ -1,0 +1,187 @@
+State,filter,Cases,Range,"B.1.1.7 Variant ","P.1 Variant ","B.1.351 Variant "
+AL,Variant B.1.1.7,186,151 to 300,186,0,2
+AK,Variant B.1.1.7,6,1 to 150,6,6,1
+AS,Variant B.1.1.7,0,0 to 0,0,0,0
+AZ,Variant B.1.1.7,152,151 to 300,152,7,3
+AR,Variant B.1.1.7,8,1 to 150,8,1,0
+CA,Variant B.1.1.7,1001,751+,1001,41,18
+CO,Variant B.1.1.7,1041,751+,1041,2,24
+CT,Variant B.1.1.7,792,751+,792,10,14
+District of Columbia,Variant B.1.1.7,56,1 to 150,56,1,3
+DE,Variant B.1.1.7,41,1 to 150,41,0,1
+FL,Variant B.1.1.7,3510,751+,3510,126,27
+GA,Variant B.1.1.7,1022,751+,1022,3,34
+GU,Variant B.1.1.7,0,0 to 0,0,0,0
+HI,Variant B.1.1.7,13,1 to 150,13,0,5
+ID,Variant B.1.1.7,30,1 to 150,30,0,2
+IL,Variant B.1.1.7,550,451 to 600,550,93,9
+IN,Variant B.1.1.7,263,151 to 300,263,4,2
+IA,Variant B.1.1.7,223,151 to 300,223,0,0
+KS,Variant B.1.1.7,106,1 to 150,106,0,2
+KY,Variant B.1.1.7,149,1 to 150,149,1,0
+LA,Variant B.1.1.7,51,1 to 150,51,0,0
+ME,Variant B.1.1.7,27,1 to 150,27,2,5
+MH,Variant B.1.1.7,0,0 to 0,0,0,0
+MD,Variant B.1.1.7,665,601 to 750,665,2,44
+MA,Variant B.1.1.7,1100,751+,1100,102,12
+MI,Variant B.1.1.7,2262,751+,2262,6,9
+FM,Variant B.1.1.7,0,0 to 0,0,0,0
+MN,Variant B.1.1.7,1573,751+,1573,5,26
+MS,Variant B.1.1.7,147,1 to 150,147,3,1
+MO,Variant B.1.1.7,110,1 to 150,110,0,1
+MT,Variant B.1.1.7,27,1 to 150,27,0,0
+NE,Variant B.1.1.7,187,151 to 300,187,2,0
+NV,Variant B.1.1.7,108,1 to 150,108,0,1
+NH,Variant B.1.1.7,206,151 to 300,206,6,0
+NJ,Variant B.1.1.7,627,601 to 750,627,8,2
+NM,Variant B.1.1.7,40,1 to 150,40,0,0
+NY,Variant B.1.1.7,136,1 to 150,136,0,1
+NC,Variant B.1.1.7,178,151 to 300,178,0,29
+ND,Variant B.1.1.7,7,1 to 150,7,0,0
+MP,Variant B.1.1.7,0,0 to 0,0,0,0
+OH,Variant B.1.1.7,658,601 to 750,658,27,9
+OK,Variant B.1.1.7,9,1 to 150,9,1,1
+OR,Variant B.1.1.7,20,1 to 150,20,1,0
+PW,Variant B.1.1.7,0,0 to 0,0,0,0
+PA,Variant B.1.1.7,839,751+,839,3,8
+PR,Variant B.1.1.7,11,1 to 150,11,0,0
+RI,Variant B.1.1.7,25,1 to 150,25,1,0
+SC,Variant B.1.1.7,197,151 to 300,197,0,82
+SD,Variant B.1.1.7,14,1 to 150,14,0,1
+TN,Variant B.1.1.7,812,751+,812,5,1
+TX,Variant B.1.1.7,414,301 to 450,414,3,3
+UT,Variant B.1.1.7,291,151 to 300,291,4,0
+VT,Variant B.1.1.7,56,1 to 150,56,0,0
+VI,Variant B.1.1.7,0,0 to 0,0,0,0
+VA,Variant B.1.1.7,349,301 to 450,349,0,37
+WA,Variant B.1.1.7,321,301 to 450,321,17,18
+WV,Variant B.1.1.7,142,1 to 150,142,0,0
+WI,Variant B.1.1.7,148,1 to 150,148,4,15
+WY,Variant B.1.1.7,9,1 to 150,9,0,0
+AL,Variant P.1,0,0 to 0,186,0,2
+AK,Variant P.1,6,1 to 150,6,6,1
+AS,Variant P.1,0,0 to 0,0,0,0
+AZ,Variant P.1,7,1 to 150,152,7,3
+AR,Variant P.1,1,1 to 150,8,1,0
+CA,Variant P.1,41,1 to 150,1001,41,18
+CO,Variant P.1,2,1 to 150,1041,2,24
+CT,Variant P.1,10,1 to 150,792,10,14
+District of Columbia,Variant P.1,1,1 to 150,56,1,3
+DE,Variant P.1,0,0 to 0,41,0,1
+FL,Variant P.1,126,1 to 150,3510,126,27
+GA,Variant P.1,3,1 to 150,1022,3,34
+GU,Variant P.1,0,0 to 0,0,0,0
+HI,Variant P.1,0,0 to 0,13,0,5
+ID,Variant P.1,0,0 to 0,30,0,2
+IL,Variant P.1,93,1 to 150,550,93,9
+IN,Variant P.1,4,1 to 150,263,4,2
+IA,Variant P.1,0,0 to 0,223,0,0
+KS,Variant P.1,0,0 to 0,106,0,2
+KY,Variant P.1,1,1 to 150,149,1,0
+LA,Variant P.1,0,0 to 0,51,0,0
+ME,Variant P.1,2,1 to 150,27,2,5
+MH,Variant P.1,0,0 to 0,0,0,0
+MD,Variant P.1,2,1 to 150,665,2,44
+MA,Variant P.1,102,1 to 150,1100,102,12
+MI,Variant P.1,6,1 to 150,2262,6,9
+FM,Variant P.1,0,0 to 0,0,0,0
+MN,Variant P.1,5,1 to 150,1573,5,26
+MS,Variant P.1,3,1 to 150,147,3,1
+MO,Variant P.1,0,0 to 0,110,0,1
+MT,Variant P.1,0,0 to 0,27,0,0
+NE,Variant P.1,2,1 to 150,187,2,0
+NV,Variant P.1,0,0 to 0,108,0,1
+NH,Variant P.1,6,1 to 150,206,6,0
+NJ,Variant P.1,8,1 to 150,627,8,2
+NM,Variant P.1,0,0 to 0,40,0,0
+NY,Variant P.1,0,0 to 0,136,0,1
+NC,Variant P.1,0,0 to 0,178,0,29
+ND,Variant P.1,0,0 to 0,7,0,0
+MP,Variant P.1,0,0 to 0,0,0,0
+OH,Variant P.1,27,1 to 150,658,27,9
+OK,Variant P.1,1,1 to 150,9,1,1
+OR,Variant P.1,1,1 to 150,20,1,0
+PW,Variant P.1,0,0 to 0,0,0,0
+PA,Variant P.1,3,1 to 150,839,3,8
+PR,Variant P.1,0,0 to 0,11,0,0
+RI,Variant P.1,1,1 to 150,25,1,0
+SC,Variant P.1,0,0 to 0,197,0,82
+SD,Variant P.1,0,0 to 0,14,0,1
+TN,Variant P.1,5,1 to 150,812,5,1
+TX,Variant P.1,3,1 to 150,414,3,3
+UT,Variant P.1,4,1 to 150,291,4,0
+VT,Variant P.1,0,0 to 0,56,0,0
+VI,Variant P.1,0,0 to 0,0,0,0
+VA,Variant P.1,0,0 to 0,349,0,37
+WA,Variant P.1,17,1 to 150,321,17,18
+WV,Variant P.1,0,0 to 0,142,0,0
+WI,Variant P.1,4,1 to 150,148,4,15
+WY,Variant P.1,0,0 to 0,9,0,0
+AL,Variant B.1.351,2,1 to 150,186,0,2
+AK,Variant B.1.351,1,1 to 150,6,6,1
+AS,Variant B.1.351,0,0 to 0,0,0,0
+AZ,Variant B.1.351,3,1 to 150,152,7,3
+AR,Variant B.1.351,0,0 to 0,8,1,0
+CA,Variant B.1.351,18,1 to 150,1001,41,18
+CO,Variant B.1.351,24,1 to 150,1041,2,24
+CT,Variant B.1.351,14,1 to 150,792,10,14
+District of Columbia,Variant B.1.351,3,1 to 150,56,1,3
+DE,Variant B.1.351,1,1 to 150,41,0,1
+FL,Variant B.1.351,27,1 to 150,3510,126,27
+GA,Variant B.1.351,34,1 to 150,1022,3,34
+GU,Variant B.1.351,0,0 to 0,0,0,0
+HI,Variant B.1.351,5,1 to 150,13,0,5
+ID,Variant B.1.351,2,1 to 150,30,0,2
+IL,Variant B.1.351,9,1 to 150,550,93,9
+IN,Variant B.1.351,2,1 to 150,263,4,2
+IA,Variant B.1.351,0,0 to 0,223,0,0
+KS,Variant B.1.351,2,1 to 150,106,0,2
+KY,Variant B.1.351,0,0 to 0,149,1,0
+LA,Variant B.1.351,0,0 to 0,51,0,0
+ME,Variant B.1.351,5,1 to 150,27,2,5
+MH,Variant B.1.351,0,0 to 0,0,0,0
+MD,Variant B.1.351,44,1 to 150,665,2,44
+MA,Variant B.1.351,12,1 to 150,1100,102,12
+MI,Variant B.1.351,9,1 to 150,2262,6,9
+FM,Variant B.1.351,0,0 to 0,0,0,0
+MN,Variant B.1.351,26,1 to 150,1573,5,26
+MS,Variant B.1.351,1,1 to 150,147,3,1
+MO,Variant B.1.351,1,1 to 150,110,0,1
+MT,Variant B.1.351,0,0 to 0,27,0,0
+NE,Variant B.1.351,0,0 to 0,187,2,0
+NV,Variant B.1.351,1,1 to 150,108,0,1
+NH,Variant B.1.351,0,0 to 0,206,6,0
+NJ,Variant B.1.351,2,1 to 150,627,8,2
+NM,Variant B.1.351,0,0 to 0,40,0,0
+NY,Variant B.1.351,1,1 to 150,136,0,1
+NC,Variant B.1.351,29,1 to 150,178,0,29
+ND,Variant B.1.351,0,0 to 0,7,0,0
+MP,Variant B.1.351,0,0 to 0,0,0,0
+OH,Variant B.1.351,9,1 to 150,658,27,9
+OK,Variant B.1.351,1,1 to 150,9,1,1
+OR,Variant B.1.351,0,0 to 0,20,1,0
+PW,Variant B.1.351,0,0 to 0,0,0,0
+PA,Variant B.1.351,8,1 to 150,839,3,8
+PR,Variant B.1.351,0,0 to 0,11,0,0
+RI,Variant B.1.351,0,0 to 0,25,1,0
+SC,Variant B.1.351,82,1 to 150,197,0,82
+SD,Variant B.1.351,1,1 to 150,14,0,1
+TN,Variant B.1.351,1,1 to 150,812,5,1
+TX,Variant B.1.351,3,1 to 150,414,3,3
+UT,Variant B.1.351,0,0 to 0,291,4,0
+VT,Variant B.1.351,0,0 to 0,56,0,0
+VI,Variant B.1.351,0,0 to 0,0,0,0
+VA,Variant B.1.351,37,1 to 150,349,0,37
+WA,Variant B.1.351,18,1 to 150,321,17,18
+WV,Variant B.1.351,0,0 to 0,142,0,0
+WI,Variant B.1.351,15,1 to 150,148,4,15
+WY,Variant B.1.351,0,0 to 0,9,0,0
+,,,1 to 150,,,
+,,,151 to 300,,,
+,,,301 to 450,,,
+,,,451 to 600,,,
+,,,601 to 750,,,
+,,,751+,,,
+,,,0,,,
+,,,0,,,
+,,,0,,,
