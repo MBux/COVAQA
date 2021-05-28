@@ -12,6 +12,7 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
+import api_data
 
 
 def readInFile(data):
@@ -26,11 +27,21 @@ def readInFile(data):
     return df
 
 
+def displayTotalVaccines():
+    df = api_data.get_vax_by_state()
+    fig = px.bar(df, x='location', y='people_vaccinated',
+                 labels={'location': 'States',
+                         'people_vaccinated': 'People Vaccinated'},
+                 height=400)
+    st.header('People Vaccinated By State')
+    st.plotly_chart(fig)
+
 def displayTotalCases(df):
+    new_df = df[df.columns.difference(['filter'])]
+    new_df = pd.DataFrame(new_df[new_df.columns[::-1]])
     # display the entire CSV file
-    is_check = st.checkbox("Display total cases of Variance of Concern")
-    if is_check:
-        st.write(df)
+    with st.beta_expander("Display total cases of variants"):
+        st.write(new_df)
 
 
 def displayStatesVariables(df):
@@ -69,7 +80,7 @@ def displayData(df):
 
 
 def main():
-    dataset = "../datasets/Cases of Variants of Concern in the United States.csv"
+    dataset = "datasets/Cases of Variants of Concern in the United States.csv"
 
     # Titles for main page and sidebars
     st.title("COVAQA")
@@ -81,6 +92,7 @@ def main():
     displayTotalCases(df)
     displayData(df)
     displayStatesVariables(df)
+    displayTotalVaccines()
 
 
 if __name__ == "__main__":
