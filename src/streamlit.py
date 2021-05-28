@@ -4,7 +4,10 @@
 
 # https: // analyticsindiamag.com/a-beginners-guide-to-streamlit-convert-python-code-into-an-app/
 
+# https://plotly.com/python/mapbox-county-choropleth/#data-indexed-by-id
 
+
+import json
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -13,6 +16,7 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import api_data
+from urllib.request import urlopen
 
 
 def readInFile(data):
@@ -35,6 +39,7 @@ def displayTotalVaccines():
                  height=400)
     st.header('People Vaccinated By State')
     st.plotly_chart(fig)
+
 
 def displayTotalCases(df):
     new_df = df[df.columns.difference(['filter'])]
@@ -79,8 +84,33 @@ def displayData(df):
             st.plotly_chart(fig)
 
 
+def totalNewCasesPerCounty():
+    # Load a GeoJSON file containing the geometry information for US counties
+    with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+        counties = json.load(response)
+
+    # Load the most recent data (30 days) for every county:
+    # Format:
+    # date, county, state, fips, cases, deaths
+    # 2020-01-21, Snohomish, Washington, 53061, 1, 0
+    df = pd.read_csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-recent.csv",
+                     dtype={"fips": str})
+
+    st.title("Total Number of New Cases per County")
+    fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', color='cases',
+                               color_continuous_scale="sunsetdark",
+                               range_color=(0, 10000),
+                               mapbox_style="carto-positron",
+                               zoom=2.5, center={"lat": 37.0902, "lon": -95.7129},
+                               opacity=0.5,
+                               labels={'cases': ''}
+                               )
+    fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+    st.plotly_chart(fig)
+
+
 def main():
-    dataset = "datasets/Cases of Variants of Concern in the United States.csv"
+    dataset = "data/CDC_Cases_of_Variants_of_Concern_in_the_United_States.csv"
 
     # Titles for main page and sidebars
     st.title("COVAQA")
@@ -93,6 +123,7 @@ def main():
     displayData(df)
     displayStatesVariables(df)
     displayTotalVaccines()
+    totalNewCasesPerCounty()
 
 
 if __name__ == "__main__":
