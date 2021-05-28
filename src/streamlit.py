@@ -18,6 +18,7 @@ import matplotlib.pyplot as plt
 from urllib.request import urlopen
 from src import api_data
 
+
 def readInFile(data):
     # load the data file
     # TODO When possible apply it to use an API
@@ -36,7 +37,7 @@ def displayTotalVaccines():
                  labels={'location': 'States',
                          'people_vaccinated': 'People Vaccinated'},
                  height=400)
-    st.header('People Vaccinated By State')
+    st.header('People Vaccinated By State', )
     st.plotly_chart(fig)
 
 
@@ -70,7 +71,7 @@ def displayData(df):
     isCheck = st.sidebar.checkbox("Display")
 
     if isCheck:
-        st.title("Total number of cases per State")
+        st.header("Total number of cases per State")
 
         if select == 'Pie chart':
             fig = px.pie(
@@ -95,7 +96,6 @@ def totalNewCasesPerCounty():
     df = pd.read_csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-recent.csv",
                      dtype={"fips": str})
 
-    st.title("Total Number of New Cases per County")
     fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', color='cases',
                                color_continuous_scale="sunsetdark",
                                range_color=(0, 10000),
@@ -105,6 +105,8 @@ def totalNewCasesPerCounty():
                                labels={'cases': ''}
                                )
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+
+    st.header("Total Number of New Cases per County")
     st.plotly_chart(fig)
 
 
@@ -128,6 +130,7 @@ def main():
 if __name__ == "__main__":
     main()
 
+
 def app():
     dataset = "data/CDC_Cases_of_Variants_of_Concern_in_the_United_States.csv"
 
@@ -139,7 +142,7 @@ def app():
     df = readInFile(dataset)
 
     displayTotalCases(df)
-    displayData(df)
+    totalNewCasesPerCounty()
     displayStatesVariables(df)
     displayTotalVaccines()
-    totalNewCasesPerCounty()
+    displayData(df)
