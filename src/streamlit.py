@@ -142,3 +142,4 @@ def app():
     displayData(df)
     displayStatesVariables(df)
     displayTotalVaccines()
+    totalNewCasesPerCounty()
