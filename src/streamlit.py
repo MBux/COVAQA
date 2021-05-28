@@ -15,13 +15,8 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
-<<<<<<< HEAD
-import api_data
 from urllib.request import urlopen
-=======
 from src import api_data
->>>>>>> multipage
-
 
 def readInFile(data):
     # load the data file
@@ -134,10 +129,10 @@ if __name__ == "__main__":
     main()
 
 def app():
-    dataset = "datasets/Cases of Variants of Concern in the United States.csv"
+    dataset = "data/CDC_Cases_of_Variants_of_Concern_in_the_United_States.csv"
 
     # Titles for main page and sidebars
-    st.title("COVAQA")
+    st.title("COVAQA - Dashboard")
     st.markdown('Dashboard for COVID-19 Information')
     st.sidebar.title("Visualization Selector")
 
