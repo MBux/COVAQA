@@ -18,8 +18,11 @@ def readInFile(data):
     # load the data file
     # TODO When possible apply it to use an API
     # TODO change your own directory
-    df = st.cache(pd.read_csv)(
-        "../datasets/Cases of Variants of Concern in the United States.csv")
+    try:
+        df = st.cache(pd.read_csv)(
+            data)
+    except Exception:
+        raise Exception("File or directory `{}` not found.".format(data))
     return df
 
 
@@ -66,11 +69,11 @@ def displayData(df):
 
 
 def main():
-    dataset = "datasets/Cases of Variants of Concern in the United States.csv"
+    dataset = "../datasets/Cases of Variants of Concern in the United States.csv"
 
     # Titles for main page and sidebars
-    st.title("COVaqa")
-    st.markdown('Deshboard for COVID-19 Informations')
+    st.title("COVAQA")
+    st.markdown('Dashboard for COVID-19 Information')
     st.sidebar.title("Visualization Selector")
 
     df = readInFile(dataset)
