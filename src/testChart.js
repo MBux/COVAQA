@@ -19,18 +19,35 @@ async function caseChart(){
                 label: 'COVID-19 Cases by Date in the United States',
                 data: data.new_cases,
                 backgroundColor: [
+                    'rgba(0, 114, 255, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(0, 114, 255, 1)',
+                ],
+                borderWidth: 1,
+                pointRadius: 0,
+            }, {
+                label: 'COVID-19 Deaths by Date in the United States',
+                data: data.new_deaths,
+                backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
                 ],
-                borderWidth: 1
+                borderWidth: 1,
+                pointRadius: 0,
             }]
         },
+        
         options: {
             scales: {
                 y: {
-                    beginAtZero: true,
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        stepSize: 220000
+                    }
                 }
             }
         }
