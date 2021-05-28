@@ -1,0 +1,11 @@
+# Scientific computing packages
+pandas
+numpy
+
+# Plotting packages
+matplotlib
+plotly
+
+# Web framework
+streamlit
+requests
