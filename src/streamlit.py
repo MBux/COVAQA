@@ -96,7 +96,7 @@ def totalNewCasesPerCounty():
     df = pd.read_csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-recent.csv",
                      dtype={"fips": str})
 
-    fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', color='cases',
+    fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', hover_name='county', color='cases',
                                color_continuous_scale="sunsetdark",
                                range_color=(0, 10000),
                                mapbox_style="carto-positron",
