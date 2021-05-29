@@ -102,11 +102,14 @@ def totalNewCasesPerCounty():
                                mapbox_style="carto-positron",
                                zoom=2.5, center={"lat": 37.0902, "lon": -95.7129},
                                opacity=0.5,
-                               labels={'cases': ''}
+                               labels={'cases': 'Cases'}
                                )
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
 
     st.header("Total Number of New Cases per County")
+
+    # Add the date of the last raw of the file: the most recent one
+    st.write("As of: ", df.iloc[-1:, :].date.to_string(index=False))
     st.plotly_chart(fig)
 
 
