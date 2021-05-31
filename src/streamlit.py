@@ -26,9 +26,9 @@ def readInFile(data):
 
 def totalVaccines():
     df = api_data.get_vax_by_state()
-    fig = px.bar(df, x='location', y='people_vaccinated',
+    fig = px.bar(df, x='location', y='people_vaccinated_per_hundred',
                  labels={'location': 'States',
-                         'people_vaccinated': 'People Vaccinated'},
+                         'people_vaccinated_per_hundred': 'Percentage of People Vaccinated'},
                  height=400)
     st.header('People Vaccinated By State', )
     st.plotly_chart(fig)
