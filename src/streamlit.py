@@ -1,4 +1,4 @@
-# Reference
+# References
 
 # https: // www.analyticsvidhya.com/blog/2021/02 building-a-covid-19-dashboard-using-streamlit-and-python/
 
@@ -10,11 +10,7 @@
 import json
 import streamlit as st
 import pandas as pd
-import numpy as np
 import plotly.express as px
-from plotly.subplots import make_subplots
-import plotly.graph_objects as go
-import matplotlib.pyplot as plt
 from urllib.request import urlopen
 from src import api_data
 
@@ -38,47 +34,67 @@ def totalVaccines():
     st.plotly_chart(fig)
 
 
-def displayStatesVariables(df):
-    # Create a filed for selecting multiple States
-    states = st.sidebar.multiselect(
-        "Enter states for which you would like to see the data", df['State'].unique())
+def newCasesOfVariantsTable():
+    df = readInFile(
+        "data/Formatted_CDC_Cases_of_Variants_of_Concern_in_the_United_States.csv")
 
-    # Create a field for Entering variable to compare
-    var = st.sidebar.multiselect("Enter the Fields", df.columns)
-
-    # Display selected variables per states
-    selectedStates = df[(df['State'].isin(states))]
-    statesData = selectedStates[var]
-    isCheck = st.sidebar.checkbox("Display the data of selected States")
-    if isCheck:
-        st.write(statesData)
-
-
-def newCasesOfVariantsTable(df):
-    new_df = df[df.columns.difference(['filter'])]
-    new_df = pd.DataFrame(new_df[new_df.columns[::-1]])
-    # display the entire CSV file
+    # Display the entire CSV file and total cases for each variant
     with st.beta_expander("Display Total Cases of Variants"):
-        st.write(new_df)
+        st.write(df)
+        x = df.sum()
+        st.write('B.1.1.7 Total: ', x.T.iloc[1],
+                 'P.1 Total: ', x.T.iloc[2],
+                 'B.1.351 Total: ', x.T.iloc[3]
+                 )
+        st.markdown(
+            "Do you want to know more about variants? [Click here](https://www.cdc.gov/coronavirus/2019-ncov/variants/variant.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Ftransmission%2Fvariant.html)")
 
 
-def newCasesOfVariantsCharts(df):
+def newCasesOfVariantsCharts():
+    df = readInFile(
+        "data/Formatted_CDC_Cases_of_Variants_of_Concern_in_the_United_States.csv")
+
     select = st.sidebar.selectbox(
         'Select a graph to display the total number of new cases of variants per state', ['Bar plot', 'Pie chart'], key='1')
-    isCheck = st.sidebar.checkbox("Display")
+    isCheck = st.sidebar.checkbox("Display", key='1')
 
     if isCheck:
         st.header("Total Number of New Cases of Variants per State")
 
         if select == 'Pie chart':
-            fig = px.pie(df, names='State', values='Cases')
-            st.plotly_chart(fig)
+            fig = px.pie(df, names='State', values='Total Cases')
 
         if select == 'Bar plot':
-            fig = px.bar(df, x='State', y='Cases', labels={'State': 'States',
-                                                           'Cases': 'Total new Variants'},
-                         height=400)
-            st.plotly_chart(fig)
+            fig = px.bar(df, x='State', y='Total Cases',
+                         labels={'State': 'States', 'Total Cases': 'Total new Variants'}, height=400)
+
+        fig.update_traces(textposition='inside')
+        st.plotly_chart(fig)
+
+
+def typesOfVariantsCharts():
+    df = readInFile(
+        "data/Formatted_CDC_Cases_of_Variants_of_Concern_in_the_United_States.csv")
+
+    select = st.sidebar.selectbox(
+        'Select a variant to display state by state', ['P.1', 'B.1.351', 'B.1.1.7'], key='2')
+    isCheck = st.sidebar.checkbox("Display", key='2')
+
+    if isCheck:
+        if select == 'P.1':
+            st.header("P.1 Variant in the US")
+            fig = px.pie(df, names='State', values='P.1')
+
+        if select == 'B.1.351':
+            st.header("B.1.351 Variant in the US")
+            fig = px.pie(df, names='State', values='B.1.351')
+
+        if select == 'B.1.1.7':
+            st.header("B.1.1.7 Variant in the US")
+            fig = px.pie(df, names='State', values='B.1.1.7')
+
+        fig.update_traces(textposition='inside')
+        st.plotly_chart(fig)
 
 
 def newCasesPerCounty():
@@ -137,40 +153,15 @@ def newDeathsPerCounty():
         st.plotly_chart(fig)
 
 
-# def main():
-#     dataset = "data/CDC_Cases_of_Variants_of_Concern_in_the_United_States.csv"
-
-#     # Titles for main page and sidebars
-#     st.title("COVAQA")
-#     st.markdown('Dashboard for COVID-19 Information')
-#     st.sidebar.title("Visualization Selector")
-
-#     df = readInFile(dataset)
-
-#     displayTotalCases(df)
-#     displayData(df)
-#     displayStatesVariables(df)
-#     displayTotalVaccines()
-#     totalNewCasesPerCounty()
-
-
-# if __name__ == "__main__":
-#     main()
-
-
 def app():
-    dataset = "data/CDC_Cases_of_Variants_of_Concern_in_the_United_States.csv"
-
-    # Titles for main page and sidebars
+    # Titles for dashboard page and sidebar
     st.title("COVAQA - Dashboard")
     st.markdown('Dashboard for COVID-19 Information')
     st.sidebar.title("Visualization Selector")
 
-    df = readInFile(dataset)
-
-    newCasesOfVariantsTable(df)
+    newCasesOfVariantsTable()
     newCasesPerCounty()
     newDeathsPerCounty()
-    # displayStatesVariables(df)
     totalVaccines()
-    newCasesOfVariantsCharts(df)
+    newCasesOfVariantsCharts()
+    typesOfVariantsCharts()
