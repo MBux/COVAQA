@@ -153,6 +153,21 @@ def newDeathsPerCounty():
         st.plotly_chart(fig)
 
 
+def deathsByAgeGroups():
+    df = readInFile(
+        "https://data.cdc.gov/resource/hk9y-quqm.csv")
+
+    st.header("COVID-19 Deaths by Age Groups in the US")
+    fig = px.pie(df, names='age_group', values='covid_19_deaths')
+    fig.update_traces(textposition='inside')
+    # Add the date of the last raw of the file: the most recent one
+    date = df.iloc[-1:,
+                   :].data_as_of.to_string(index=False).split('T')[0]
+
+    st.write("As of: ", date)
+    st.plotly_chart(fig)
+
+
 def app():
     # Titles for dashboard page and sidebar
     st.title("COVAQA - Dashboard")
@@ -163,5 +178,6 @@ def app():
     newCasesPerCounty()
     newDeathsPerCounty()
     totalVaccines()
+    deathsByAgeGroups()
     newCasesOfVariantsCharts()
     typesOfVariantsCharts()
