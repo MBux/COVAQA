@@ -123,6 +123,8 @@ def newCasesPerCounty():
         # Add the date of the last raw of the file: the most recent one
         st.write("As of: ", df.iloc[-1:, :].date.to_string(index=False))
         st.plotly_chart(fig)
+        st.markdown(
+            "Do you want to know more about how the virus spread? [Click here](https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/how-covid-spreads.html)")
 
 
 def newDeathsPerCounty():
@@ -151,6 +153,8 @@ def newDeathsPerCounty():
         # Add the date of the last raw of the file: the most recent one
         st.write("As of: ", df.iloc[-1:, :].date.to_string(index=False))
         st.plotly_chart(fig)
+        st.markdown(
+            "Do you want to know more about mortality from COVID-19? [Click here](https://www.cdc.gov/nchs/covid19/mortality-overview.htm)")
 
 
 def deathsByAgeGroups():
