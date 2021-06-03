@@ -46,6 +46,7 @@ def newCasesOfVariantsTable():
                  'P.1 Total: ', x.T.iloc[2],
                  'B.1.351 Total: ', x.T.iloc[3]
                  )
+        st.write("As of: 2021-04-21")
         st.markdown(
             "Do you want to know more about variants? [Click here](https://www.cdc.gov/coronavirus/2019-ncov/variants/variant.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Ftransmission%2Fvariant.html)")
 
@@ -60,6 +61,7 @@ def newCasesOfVariantsCharts():
 
     if isCheck:
         st.header("Total Number of New Cases of Variants per State")
+        st.write("As of: 2021-04-21")
 
         if select == 'Pie chart':
             fig = px.pie(df, names='State', values='Total Cases')
