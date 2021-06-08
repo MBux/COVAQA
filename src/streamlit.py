@@ -24,7 +24,6 @@ def readInFile(data):
         raise Exception("File or directory `{}` not found.".format(data))
     return df
 
-@st.cache(suppress_st_warning=True)
 def totalVaccines():
     df = api_data.get_vax_by_state()
     fig = px.bar(df, x='location', y='people_vaccinated_per_hundred',
@@ -34,7 +33,6 @@ def totalVaccines():
     st.header('People Vaccinated By State', )
     st.plotly_chart(fig)
 
-@st.cache(suppress_st_warning=True)
 def newCasesOfVariantsTable():
     df = readInFile(
         "data/Formatted_CDC_Cases_of_Variants_of_Concern_in_the_United_States.csv")
@@ -50,7 +48,6 @@ def newCasesOfVariantsTable():
         st.markdown(
             "Do you want to know more about variants? [Click here](https://www.cdc.gov/coronavirus/2019-ncov/variants/variant.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Ftransmission%2Fvariant.html)")
 
-@st.cache(suppress_st_warning=True)
 def newCasesOfVariantsCharts():
     df = readInFile(
         "data/Formatted_CDC_Cases_of_Variants_of_Concern_in_the_United_States.csv")
@@ -72,7 +69,6 @@ def newCasesOfVariantsCharts():
         fig.update_traces(textposition='inside')
         st.plotly_chart(fig)
 
-@st.cache(suppress_st_warning=True)
 def typesOfVariantsCharts():
     df = readInFile(
         "data/Formatted_CDC_Cases_of_Variants_of_Concern_in_the_United_States.csv")
@@ -97,7 +93,6 @@ def typesOfVariantsCharts():
         fig.update_traces(textposition='inside')
         st.plotly_chart(fig)
 
-@st.cache(suppress_st_warning=True)
 def newCasesPerCounty():
     # Load a GeoJSON file containing the geometry information for US counties
     with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
@@ -125,7 +120,6 @@ def newCasesPerCounty():
         st.write("As of: ", df.iloc[-1:, :].date.to_string(index=False))
         st.plotly_chart(fig)
 
-@st.cache(suppress_st_warning=True)
 def newDeathsPerCounty():
     # Load a GeoJSON file containing the geometry information for US counties
     with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
