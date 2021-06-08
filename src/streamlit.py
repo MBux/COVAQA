@@ -33,7 +33,8 @@ def totalVaccines():
                          'people_vaccinated_per_hundred': 'Percentage of People Vaccinated'}, height=400)
 
     with st.beta_expander('People Vaccinated By State', expanded=True):
-        # st.header('People Vaccinated By State', )
+        # Add the date of the last raw of the file: the most recent one
+        st.write("As of: ", df.iloc[-1:, :].date.to_string(index=False))
         st.plotly_chart(fig, use_container_width=True)
 
 
@@ -164,7 +165,6 @@ def deathsByAgeGroups():
     df = readInFile(
         "https://data.cdc.gov/resource/hk9y-quqm.csv")
 
-    # st.header("COVID-19 Deaths by Age Groups in the US")
     fig = px.pie(df, names='age_group', values='covid_19_deaths',
                  color_discrete_sequence=px.colors.sequential.Aggrnyl)
     fig.update_traces(textposition='inside')
