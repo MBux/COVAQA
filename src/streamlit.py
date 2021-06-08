@@ -31,7 +31,7 @@ def totalVaccines():
                  labels={'location': 'States',
                          'people_vaccinated_per_hundred': 'Percentage of People Vaccinated'},
                  height=400)
-    st.header('People Vaccinated By State', )
+    # st.header('People Vaccinated By State', )
     st.plotly_chart(fig)
 
 @st.cache
@@ -163,6 +163,7 @@ def app():
     newCasesOfVariantsTable()
     newCasesPerCounty()
     newDeathsPerCounty()
+    st.header('People Vaccinated By State', )
     totalVaccines()
     newCasesOfVariantsCharts()
     typesOfVariantsCharts()
