@@ -9,3 +9,12 @@ plotly
 # Web framework
 streamlit
 requests
+
+# ML library
+torch
+
+# NLP model library
+transformers
+
+# Scientific Computing
+scikit-learn
