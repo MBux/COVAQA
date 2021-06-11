@@ -165,6 +165,8 @@ def deathsByAgeGroups():
     df = readInFile(
         "https://data.cdc.gov/resource/hk9y-quqm.csv")
 
+    df = df.iloc[220:230]  # only cases with covid-19 reported as condition
+
     fig = px.pie(df, names='age_group', values='covid_19_deaths',
                  color_discrete_sequence=px.colors.sequential.Aggrnyl)
     fig.update_traces(textposition='inside')
