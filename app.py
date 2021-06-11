@@ -7,5 +7,5 @@ app = MultiApp()
 
 app.add_app("Home", home.app)
 app.add_app("Dashboard", streamlit.app)
-app.add_app("COVAQA", qa.app)
+app.add_app("Question Answering", qa.app)
 app.run()
