@@ -32,7 +32,7 @@ def totalVaccines():
                  labels={'location': 'States',
                          'people_vaccinated_per_hundred': 'Percentage of People Vaccinated'}, height=400)
 
-    with st.beta_expander('People Vaccinated By State', expanded=True):
+    with st.expander('People Vaccinated By State', expanded=True):
         # Add the date of the last raw of the file: the most recent one
         st.write("As of: ", df.iloc[-1:, :].date.to_string(index=False))
         st.plotly_chart(fig, use_container_width=True)
@@ -43,7 +43,7 @@ def newCasesOfVariantsTable():
         "data/Formatted_CDC_Cases_of_Variants_of_Concern_in_the_United_States.csv")
 
     # Display the entire CSV file and total cases for each variant
-    with st.beta_expander("Total Cases of Variants", expanded=True):
+    with st.expander("Total Cases of Variants", expanded=True):
         st.write(df)
         x = df.sum()
         st.write('B.1.1.7 Total: ', x.T.iloc[1],
@@ -71,7 +71,7 @@ def newCasesOfVariantsCharts():
                      labels={'State': 'States', 'Total Cases': 'Total new Variants'}, height=400)
 
     fig.update_traces(textposition='inside')
-    with st.beta_expander('Total Number of New Cases of Variants per State', expanded=True):
+    with st.expander('Total Number of New Cases of Variants per State', expanded=True):
         st.write("As of: 2021-04-21")
         st.plotly_chart(fig, use_container_width=True)
 
@@ -96,7 +96,7 @@ def typesOfVariantsCharts():
                      color_discrete_sequence=px.colors.sequential.Cividis)
 
     fig.update_traces(textposition='inside')
-    with st.beta_expander('Selected Varaint State by State', expanded=True):
+    with st.expander('Selected Varaint State by State', expanded=True):
         st.write("As of: 2021-04-21")
         st.plotly_chart(fig, use_container_width=True)
 
@@ -123,7 +123,7 @@ def newCasesPerCounty():
                                )
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
 
-    with st.beta_expander("Total Number of New Cases per County", expanded=True):
+    with st.expander("Total Number of New Cases per County", expanded=True):
         # Add the date of the last raw of the file: the most recent one
         st.write("As of: ", df.iloc[-1:, :].date.to_string(index=False))
         st.plotly_chart(fig, use_container_width=True)
@@ -153,7 +153,7 @@ def newDeathsPerCounty():
                                )
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
 
-    with st.beta_expander("Total Number of New Deaths per County", expanded=True):
+    with st.expander("Total Number of New Deaths per County", expanded=True):
         # Add the date of the last raw of the file: the most recent one
         st.write("As of: ", df.iloc[-1:, :].date.to_string(index=False))
         st.plotly_chart(fig, use_container_width=True)
@@ -174,7 +174,7 @@ def deathsByAgeGroups():
     date = df.iloc[-1:,
                    :].data_as_of.to_string(index=False).split('T')[0]
 
-    with st.beta_expander('COVID-19 Deaths by Age Groups in the US', expanded=True):
+    with st.expander('COVID-19 Deaths by Age Groups in the US', expanded=True):
         st.write("As of: ", date)
         st.plotly_chart(fig, use_container_width=True)
 
